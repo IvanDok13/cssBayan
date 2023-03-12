@@ -42,11 +42,18 @@ html {
     scroll-behavior: smooth;
 }
 
+a:visited,
+a:link,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #000000;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
-    text-decoration: none;
 }
 
 body {
@@ -55,7 +62,6 @@ body {
     font-size: 2rem;
     line-height: 1.2;
     font-weight: bold;
-    color: #000000;
     background: #fff8c5;
     display: flex;
     justify-content: center;
@@ -63,9 +69,11 @@ body {
 
 .wrapper {
     max-width: 100%;
+    max-height: 50%;
     margin: 0 auto;
     position: static;
 }
+
 
 /*Main Header styles*/
 .header {
@@ -82,23 +90,89 @@ body {
 
 /*Main Header styles end*/
 
+
 /*Main styles*/
 
+.main__mem {
+    transition: 2s, color 1s;
+}
+
 .img__mem {
-    height: 500px;
-    max-width: auto;
-    margin: 0 auto;
+    max-height: auto;
+    max-width: 500px;
     display: block;
-    transition: all 0.5s ease;
+    margin: 0 auto;
+}
+
+.mem__card {
+    position: static;
+    border-bottom: 3px solid transparent;
+}
+
+.mem__card:hover .mems-text,
+.mem__card:focus .mems-text {
+    color: black;
+    background-color: rgb(105, 78, 78);
 }
 
 .hidden__img {
     display: none;
+    cursor: grab;
+}
+.active {
+    display: block;
 }
 
-a.mem-name:hover+div {
+a.mem-name:hover+div,
+a.mem-name:focus+div,
+a.mem-name:active+div {
     display: block;
 }
 
 /*Main styles end*/
 
+
+/*Media styles end*/
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 1.8rem;
+    }
+
+    .main-container {
+        min-height: 70%;
+        min-width: 70%;
+        transform: translate(-2rem, 1rem);
+    }
+}
+
+@media (max-width:820px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    .main__mems {
+        min-height: 80%;
+        min-width: 80%;
+
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 0.7rem;
+    }
+
+    .main__mems {
+        min-height: 70%;
+        min-width: 70%;
+        flex-wrap: wrap;
+    }
+
+    a.mem-name:hover+div,
+    a.mem-name:focus+div,
+    a.mem-name:active+div {
+        display: block;
+        max-width: 70%;
+    }
+}
