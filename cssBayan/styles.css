@@ -1,3 +1,42 @@
+/* lato-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lato-v23-latin-regular.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v23-latin-regular.woff') format('woff');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/lato-v23-latin-700.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v23-latin-700.woff') format('woff');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-900 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/lato-v23-latin-900.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v23-latin-900.woff') format('woff');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -7,27 +46,59 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    text-decoration: none;
 }
 
 body {
     font-family: 'lato';
     font-style: normal;
-    font-size: 16px;
+    font-size: 2rem;
     line-height: 1.2;
-    font-weight: normal;
-    color: #102746;
+    font-weight: bold;
+    color: #000000;
     background: #fff8c5;
     display: flex;
     justify-content: center;
 }
 
 .wrapper {
-    max-width: 1060px;
+    max-width: 100%;
     margin: 0 auto;
+    position: static;
 }
 
-/*Header styles*/
-.header-link {
-    text-decoration: none;
+/*Main Header styles*/
+.header {
+    width: 100%;
+    padding-top: 56px;
 }
-/*Header styles end*/
+
+.header-link:hover,
+.header-link:focus,
+.header-link:active {
+    opacity: .75;
+
+}
+
+/*Main Header styles end*/
+
+/*Main styles*/
+
+.img__mem {
+    height: 500px;
+    max-width: auto;
+    margin: 0 auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.hidden__img {
+    display: none;
+}
+
+a.mem-name:hover+div {
+    display: block;
+}
+
+/*Main styles end*/
+
